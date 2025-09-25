@@ -42,6 +42,11 @@ A personal blog built with Django featuring user authentication, post management
 
 2. **Install dependencies**:
    ```bash
+   pip install -r requirements.txt
+   ```
+   
+   Or install manually:
+   ```bash
    pip install django python-dotenv django-widget-tweaks
    ```
 
