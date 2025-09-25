@@ -1,5 +1,7 @@
 # Django Blog Project
 
+[![Django CI](https://github.com/johnwroge/Django_Blog/actions/workflows/django.yml/badge.svg)](https://github.com/johnwroge/Django_Blog/actions/workflows/django.yml)
+
 A personal blog built with Django featuring user authentication, post management, and commenting system.
 
 ## Features
@@ -152,11 +154,34 @@ Never commit the `.env` file to version control.
 
 ## Development
 
+### Running Tests Locally
+```bash
+# Run all tests
+python manage.py test
+
+# Run with verbose output
+python manage.py test --verbosity=2
+
+# Run security checks
+python manage.py check --deploy
+```
+
+### Continuous Integration
+This project uses GitHub Actions for automated testing. Every push to `main` or `develop` branches will:
+- Run the full test suite on Python 3.11
+- Perform Django system checks
+- Run database migrations
+- Execute security checks
+
+Tests must pass before merging pull requests.
+
 ### Adding New Features
 1. Create new models in `blog/models.py`
 2. Run `python manage.py makemigrations blog`
 3. Run `python manage.py migrate`
 4. Update views, forms, and templates as needed
+5. Write tests for new functionality
+6. Ensure all tests pass locally before pushing
 
 ### Testing User Roles
 1. Create superuser account
